@@ -1,0 +1,49 @@
+header{
+    width: 100%;
+    padding: 0px 30px;
+}
+nav{
+    height: 100%;
+}
+nav a{
+    color: #007bff; /* Default blue color */
+    text-decoration: none; /* Remove underline */
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    height: 100%;
+}
+
+nav a:hover{
+    color: #0056b3;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+
+footer{
+    width: 100%;
+    background-color: #262F36;
+    padding: 20px 10px 0px;
+}
+
+.footer-1{width: 100%;}
+
+footer .footer-1 h4{
+    color: white;
+    font-weight: bold;
+}
+
+
+
+.footer-2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px grey solid;
+    padding: 10px 0px 0px 0px;
+}
+
+.footer-2 p{
+    color: white;
+}

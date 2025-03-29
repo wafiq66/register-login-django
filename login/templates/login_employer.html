@@ -1,0 +1,71 @@
+{%load static%}
+<!DOCTYPE html>
+<!-- Source Codes By CodingNepal - www.codingnepalweb.com -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login As Employer</title>
+  <link rel="stylesheet" href="{% static 'css/header-footer-1.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/login.css' %}" />
+  <link rel="icon" type="image/x-icon" href="{% static 'images/tab-icon.png' %}">
+</head>
+<body>
+  <header class="d-flex justify-content-between align-items-center">
+      <img src="{% static 'images/NASOM.png' %}" alt="" style="width: 300px; height: auto;" id="logo">
+      <nav>
+        <a href="">Home</a>
+      </nav>
+  </header>
+  <div class="login_form">
+    <!-- Login form container -->
+    <form action="{% url 'get_login_employer' %}" method="post">
+      {% csrf_token %}
+      <h3>Login As</h3>
+      <div class="login_option">
+        <!-- Google button -->
+        <div class="option">
+          <a href="{% url 'get_login_applicant' %}" class="unselected">
+            <span>Applicant</span>
+          </a>
+        </div>
+        <!-- Apple button -->
+        <div class="option">
+          <a href="#" class="selected">
+            <span>Employer</span>
+          </a>
+        </div>
+      </div>
+      <!-- Login option separator -->
+      <p class="separator"></p>
+
+      <!-- Register Success And Register Fail Message -->
+      {% for message in messages %}
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+          <div class="alert alert-success">{{ message }}</div>
+        {% elif message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+          <div class="alert alert-danger">{{ message }}</div>
+        {% endif %}
+      {% endfor %}
+
+      <!-- Email input box -->
+      <div class="input_box">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" name="email" required />
+      </div>
+      <!-- Paswwrod input box -->
+      <div class="input_box">
+        <div class="password_title">
+          <label for="password">Password</label>
+        </div>
+        <input type="password" id="password" placeholder="Enter your password" name="password" required />
+        <a href="#" id="forgot-password">Forgot Password?</a>
+      </div>
+       <!-- Login button -->
+      <button type="submit">Log In</button>
+      <p class="sign_up">Don't have an account? <a href="{% url 'get_register_employer' %}">Sign up</a></p>
+    </form>
+  </div>
+  {% include "footer.html" %}
+</body>
+</html>
