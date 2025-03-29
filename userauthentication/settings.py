@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "register",
     "user",
     "landingpage",
+    "forgotpassword"
 ]
 
 MIDDLEWARE = [
