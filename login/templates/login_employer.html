@@ -59,7 +59,7 @@
           <label for="password">Password</label>
         </div>
         <input type="password" id="password" placeholder="Enter your password" name="password" required />
-        <a href="#" id="forgot-password">Forgot Password?</a>
+        <a href="{% url 'password_reset_form' %}" id="forgot-password">Forgot Password?</a>
       </div>
        <!-- Login button -->
       <button type="submit">Log In</button>
